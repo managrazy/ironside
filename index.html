@@ -29,5 +29,40 @@
     <a href="https://steamcommunity.com/id/riotironside/" class="btn">My Steam</a>
     <a href="https://trollface.dk/" class="btn">MARKETPLACE DISCORD SELLER</a>
   </div>
+
+  <script>
+  const snowflakeCount = 50;
+
+  for (let i = 0; i < snowflakeCount; i++) {
+    const snowflake = document.createElement("div");
+    snowflake.className = "snowflake";
+    snowflake.style.left = `${Math.random() * 100}vw`;
+    snowflake.style.animationDuration = `${2 + Math.random() * 5}s`;
+    snowflake.style.opacity = Math.random();
+    snowflake.style.fontSize = `${10 + Math.random() * 20}px`;
+    snowflake.innerHTML = "❄";
+    document.body.appendChild(snowflake);
+  }
+</script>
+
+<script>
+  const titles = ["🔥 IRONSIDE 🔥", "💀 IRONSIDE 💀", "⚔️ IRONSIDE ⚔️"];
+  let index = 0;
+  setInterval(() => {
+    document.title = titles[index % titles.length];
+    index++;
+  }, 1500);
+</script>
+
+<script>
+  document.addEventListener("click", () => {
+    const audio = new Audio("assets/soundtrack.mp3");
+    audio.volume = 0.1; // Define o volume aqui também
+    audio.loop = true;
+    audio.play();
+  }, { once: true });
+</script>
+
+
 </body>
 </html>
